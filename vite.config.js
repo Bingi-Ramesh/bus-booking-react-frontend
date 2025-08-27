@@ -7,5 +7,6 @@ export default defineConfig({
   plugins: [react(),
     tailwindcss(),
   ],
+  base: './', // ✅ THIS FIXES asset loading issues on Render
   
 })
