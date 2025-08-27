@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 
 const UserBookings = ({ token, userId }) => {
   const [bookings, setBookings] = useState([])
-
+const API=import.meta.env.VITE_API_URL
   useEffect(() => {
     const fetchBookings = async () => {
       if (!token || !userId) {
@@ -11,7 +11,7 @@ const UserBookings = ({ token, userId }) => {
       }
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/user/${userId}/bookings/`,
+          `${API}/api/user/${userId}/bookings/`,
           {
             headers: {
               Authorization: `Token ${token}`

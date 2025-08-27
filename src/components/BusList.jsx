@@ -3,14 +3,14 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const BusList = () => {
-
+  const API=import.meta.env.VITE_API_URL
   const [buses, setBuses] = useState([])
   const navigate = useNavigate()
 
   useEffect(() => {
     const fetchBuses = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/buses/')
+        const response = await axios.get(`${API}/api/buses/`)
         setBuses(response.data)
       } catch (error) {
         console.log(error)

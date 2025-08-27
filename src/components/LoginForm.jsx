@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
 const LoginForm = ({onLogin}) => {
+    const API=import.meta.env.VITE_API_URL
     const [form,setForm]=useState({
         username:'',password:''
     })
@@ -15,7 +16,7 @@ const navigate=useNavigate()
     const handleSubmit=async(e)=>{
         e.preventDefault()
         try {
-            const response= await axios.post('http://localhost:8000/api/login/',form)
+            const response= await axios.post(`${API}/api/login/`,form)
             console.log(response)
             setMessage("Login Successful.")
             if(onLogin){

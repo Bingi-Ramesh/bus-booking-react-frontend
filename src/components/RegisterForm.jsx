@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 
 const RegisterForm = () => {
+    const API=import.meta.env.VITE_API_URL
     const [form,setForm]=useState({
         username:'',email:'',password:''
     })
@@ -14,7 +15,7 @@ const RegisterForm = () => {
     const handleSubmit=async(e)=>{
         e.preventDefault()
         try {
-            await axios.post('http://localhost:8000/api/register/',form)
+            await axios.post(`${API}/api/register/`,form)
             setMessage("Registration Successful.")
         } catch (error) {
             setMessage("Failed to Register."+ (error.response?.data?.username || error.message))
