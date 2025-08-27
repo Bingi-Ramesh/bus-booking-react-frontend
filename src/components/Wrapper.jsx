@@ -19,6 +19,11 @@ const Wrapper = ({ token, handleLogout, children }) => {
                   My Bookings
                 </button>
               </Link>
+              <Link to="/">
+                <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition duration-200">
+                  Home
+                </button>
+              </Link>
               <button
                 onClick={logout}
                 className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-200"
