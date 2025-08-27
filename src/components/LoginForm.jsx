@@ -73,6 +73,12 @@ const navigate=useNavigate()
                         {message}
                     </h4>
                 )}
+                <p class="text-gray-700">
+  Dont have an account? 
+  <a href="/register" class="text-blue-500 hover:text-blue-700 font-semibold">
+    Register
+  </a>
+</p>
 
                 <button 
                     type='submit'
